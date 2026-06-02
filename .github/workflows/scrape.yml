@@ -94,8 +94,10 @@ jobs:
       - name: ⬆️ Update yt-dlp
         run: pip install -U yt-dlp
 
-      - name: 🎬 Install ffmpeg (for H.264 transcode fix)
-        run: sudo apt-get install -y ffmpeg
+      - name: 🎬 Update Repositories & Install ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg --fix-missing
 
       - name: ☁️ Install MEGAcmd
         run: |
